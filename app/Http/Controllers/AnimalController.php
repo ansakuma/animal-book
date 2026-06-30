@@ -34,6 +34,7 @@ class AnimalController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'owner_name' => 'nullable|string|max:255', 
             'image' => 'nullable|image|mimes:jpg,jpeg,png',
             'breed' => 'nullable|string|max:255',
             'personality' => 'nullable|string',
@@ -51,6 +52,8 @@ class AnimalController extends Controller
 
         Animal::create([
             'name' => $validated['name'],
+            'owner_name' => $validated['owner_name'] ?? null, // 画面からの入力を保存します
+            'image' => $imagePath,
             'image' => $imagePath,
             'breed' => $validated['breed'] ?? null,
             'personality' => $validated['personality'] ?? null,
@@ -83,6 +86,7 @@ class AnimalController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'owner_name' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpg,jpeg,png',
             'breed' => 'nullable|string|max:255',
             'personality' => 'nullable|string',
@@ -96,6 +100,7 @@ class AnimalController extends Controller
 
         // その他の項目を更新
         $animal->name = $validated['name'];
+        $animal->owner_name = $validated['owner_name'] ?? null;
         $animal->breed = $validated['breed'] ?? null;
         $animal->personality = $validated['personality'] ?? null;
         $animal->skill = $validated['skill'] ?? null;

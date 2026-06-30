@@ -84,7 +84,8 @@
         {{-- アニマル一覧 --}}
         <table>
             <tr>
-                <th>名前</th>
+                <th>アニマル名</th>
+                <th>飼い主</th>
                 <th>写真</th>
                 <th>種類</th>
                 <th>操作</th>
@@ -93,6 +94,7 @@
             @foreach ($animals as $animal)
             <tr>
                 <td>{{ $animal->name }}</td>
+                <td>{{ $animal->owner_name ?? '名無しさん🐾' }}</td>
                 <td>
                     <img src="{{ asset('storage/' . $animal->image) }}" alt="{{ $animal->name }}">
                 </td>

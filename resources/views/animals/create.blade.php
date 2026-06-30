@@ -95,10 +95,13 @@
     @csrf
 
     <div class="form-group">
-        <label for="name">名前</label>
+        <label for="name">アニマル名</label>
         <input type="text" name="name" id="name" placeholder="例: とと">
     </div>
-
+    <div class="form-group">
+        <label for="owner_name">飼い主名</label>
+        <input type="text" name="owner_name" id="owner_name" placeholder="例: 宮城のおじさん">
+    </div>
     <div class="form-group">
         <label for="image">画像ファイル名</label>
         <input type="file" name="image" id="image">

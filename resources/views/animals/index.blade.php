@@ -68,7 +68,8 @@
 
         <table>
             <tr>
-                <th>名前</th>
+                <th>アニマル名</th>
+                <th>飼い主</th>
                 <th>写真</th>
                 <th>種類</th>
                 <th>詳細</th>
@@ -78,6 +79,7 @@
             @foreach ($animals as $animal)
             <tr>
                 <td>{{ $animal->name }}</td>
+                <td>{{ $animal->owner_name ?? '名無しさん🐾' }}</td>
                 <td>
                     @if($animal->image)
                         <img src="{{ asset('storage/' . $animal->image) }}" alt="{{ $animal->name }}">
@@ -97,7 +99,6 @@
         </table>
 
     </div>
-
     <script>
         // 画面の中にあるすべてのハートボタン（.heart-button）を見つけて、クリックイベントをつける
         document.querySelectorAll('.heart-button').forEach(button => {

@@ -8,6 +8,7 @@ class Animal extends Model
 {
     protected $fillable = [
         'name',
+        'owner_name',
         'image',
         'breed',
         'personality',

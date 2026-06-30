@@ -60,10 +60,13 @@
     @method('PATCH')
 
     <div class="form-group">
-        <label for="name">名前</label>
+        <label for="name">アニマル名</label>
         <input type="text" name="name" id="name" value="{{ $animal->name }}">
     </div>
-
+    <div class="form-group">
+        <label for="owner_name">飼い主名</label>
+        <input type="text" name="owner_name" id="owner_name" value="{{ $animal->owner_name }}" placeholder="例: 宮城のおじさん">
+    </div>
     <div class="form-group">
         <label for="image">画像（変更する場合のみ選択）</label>
         <p style="margin: 5px 0;"><small>現在の画像：</small></p>
