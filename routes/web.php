@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LikeController;
 
 Route::get('/', [AnimalController::class, 'index'])->name('index');
-Route::get('/animals/{id}', [AnimalController::class, 'show'])->name('animals.show');
+
 
 
 Route::middleware('auth')->group(function () {
@@ -32,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/animals/{id}', [AnimalController::class, 'show'])->name('animals.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
