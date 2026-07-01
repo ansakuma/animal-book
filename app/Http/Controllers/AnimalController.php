@@ -11,7 +11,7 @@ class AnimalController extends Controller
     // 一覧ページを表示する
     public function index()
     {
-        $animals = Animal::all();
+        $animals = Animal::latest()->get();
         return view('animals.index', compact('animals'));// animals/index.blade.php にデータを渡す
     }
 
@@ -67,7 +67,7 @@ class AnimalController extends Controller
     public function mypage()
     {
         // 今はログインユーザーをID「1」として固定しているので、user_id が 1 のデータだけを取得
-        $animals = Animal::where('user_id', Auth::id())->get();
+        $animals = Animal::where('user_id', Auth::id())->latest()->get();
         
         return view('animals.mypage', compact('animals'));
     }
