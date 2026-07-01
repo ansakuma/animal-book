@@ -101,20 +101,20 @@
     </div>
     <script>
         // 画面の中にあるすべてのハートボタン（.heart-button）を見つけて、クリックイベントをつける
-        document.querySelectorAll('.heart-button').forEach(button => {
+        document.querySelectorAll('.heart-button').forEach(button => {//画面内にある、すべてのハートボタン（.heart-button というクラスがついた要素）をまとめて全部捕まえます
             button.addEventListener('click', function() {
-                const animalId = this.getAttribute('data-animal-id'); // クリックされたアニマルのIDを取得
-                const heart = this;
+                const animalId = this.getAttribute('data-animal-id'); //HTML側に仕込んでおいた、その動物のID（例：data-animal-id="5" なら 5）を読み取ります。これで、サーバーに「5番のワンちゃんをいいねしたよ」と伝える準備ができます。
+                const heart = this;//あとでハートの色を変えるときに「このボタン」を迷わず操作できるように、heart という名前の変数にキープ
 
                 // LaravelのLikeControllerに「いいねして！」と裏側でリクエストを送る
-                fetch(`/animals/${animalId}/like`, {
+                fetch(`/animals/${animalId}/like`, {//通信先のURLです。もしIDが 5 だったら、自動的に /animals/5/like というURLに変身します。
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json',//「今から送るデータは、JSONという形式のテキストファイルだよ！」というお知らせ
                         'X-CSRF-TOKEN': '{{ csrf_token() }}' // Laravelで通信するときに必須の暗号キー
                     }
                 })
-                .then(response => response.json()) // サーバーからの返事（json）を解析
+                .then(response => response.json()) // 通信が終わったら、次にこれをやってね」という予約命令.サーバーからの返事（json）を解析
                 .then(data => {
                     if (data.status === 'liked') {
                         // 💡 「いいね登録」されたら：黒クラスを消して、赤クラスをつける

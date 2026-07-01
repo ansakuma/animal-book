@@ -46,6 +46,10 @@
             align-items: center; /* 上下中央に揃える */
             gap: 20px;         /* リンク同士の間に20ピクセルの隙間をあける */
         }
+        .nav-link:hover {
+            color: orange;    /* リンクの色を青にする */
+            text-decoration: none; /* 下線を消す */
+        }
 
         /* 💡 ナビゲーションのリンク（トップページ・マイページ） */
         .nav-link {
@@ -100,6 +104,7 @@
                     {{-- 💡 ログインしていない時は、「ゲスト」などと表示するか、ログインボタンを置く --}}
                     <span class="user-info">ゲストさん</span>
                     <a href="{{ route('login') }}" class="nav-link">ログイン</a>
+                    <a href="{{ route('register') }}" class="nav-link">ユーザー新規登録</a> 
                 @endauth
                
 
