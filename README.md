@@ -20,7 +20,8 @@
 
 
 ↓アニマルの詳細ページ
-<img width="362" height="615" alt="image" src="https://github.com/user-attachments/assets/fe99345a-5001-4445-8ddb-bb8195ca09e9" />
+<img width="362" height="615" alt="image" src="https://github.com/user-attachments/assets/e226d5d0-fb24-49e7-bb8f-4583edde7ce5" />
+
 
 
 ↓マイページ（自分が登録したアニマル一覧）
@@ -32,7 +33,7 @@
 
 
 ↓マイページ（新しいアニマルの登録）
-<img width="631" height="699" alt="image" src="https://github.com/user-attachments/assets/c9b21b60-1302-4750-aa7e-50287fe8d0dd" />
+<img width="1253" height="788" alt="image" src="https://github.com/user-attachments/assets/823b0544-18f6-4bf0-a34f-b8e0d25c982f" />
 
 
 
