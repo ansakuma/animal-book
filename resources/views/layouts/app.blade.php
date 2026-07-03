@@ -100,6 +100,10 @@
                     {{-- 💡 ログインしている時だけ、名前を表示する --}}
                     <span class="user-info">ユーザー名: <strong>{{ Auth::user()->name }}</strong></span>
                     <span class="user-info">メール: <strong>{{ Auth::user()->email }}</strong></span>
+                    <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
+                        @csrf
+                        <button type="submit" class="logout-btn">ログアウト</button>
+                    </form>
                 @else
                     {{-- 💡 ログインしていない時は、「ゲスト」などと表示するか、ログインボタンを置く --}}
                     <span class="user-info">ゲストさん</span>
@@ -108,10 +112,7 @@
                 @endauth
                
 
-                <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
-                    @csrf
-                    <button type="submit" class="logout-btn">ログアウト</button>
-                </form>
+                
             </div>
         </div>
     </header>
