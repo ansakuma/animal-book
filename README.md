@@ -9,23 +9,30 @@
 
 最新順の並び替え機能: 新しく登録されたアニマルが一番上に表示されるよう、コントローラー側で `latest()` メソッドを使用し、データベースからの取得順を制御しました。
 
-動的なヘッダー切り替え: Laravel Breezeの認証機能と連携し、ログイン状態（`@auth`）とゲスト状態でヘッダーの表示（ユーザー名表示やログアウトボタン）が綺麗に切り替わるように実装しています。
+ログイン状態（`@auth`）とゲスト状態でヘッダーの表示（ユーザー名表示やログアウトボタン）が綺麗に切り替わるようにしています。
 
-↓ログイン前の画面（ゲストモード）
+↓ログイン前のトップページ（ゲストモード）
 <img width="1457" height="983" alt="image" src="https://github.com/user-attachments/assets/3c742736-5991-43aa-ad31-505296ef06db" />
 
 
-↓ログイン後の画面（いいね機能）
+↓ログイン後のトップページ（いいね機能）
 <img width="1439" height="985" alt="image" src="https://github.com/user-attachments/assets/e7a3a4d3-3dbe-4a1b-8860-b54aec8753c8" />
+
+
+↓アニマルの詳細ページ
+<img width="362" height="615" alt="image" src="https://github.com/user-attachments/assets/fe99345a-5001-4445-8ddb-bb8195ca09e9" />
 
 
 ↓マイページ（自分が登録したアニマル一覧）
 <img width="1440" height="961" alt="image" src="https://github.com/user-attachments/assets/11838cfc-3911-4c8e-9322-0ea84c901f30" />
 
 
+↓マイページ（登録済みアニマルの編集）
+<img width="993" height="829" alt="image" src="https://github.com/user-attachments/assets/735672bc-5364-411b-a489-658c147399d1" />
 
 
-
+↓マイページ（新しいアニマルの登録）
+<img width="631" height="699" alt="image" src="https://github.com/user-attachments/assets/c9b21b60-1302-4750-aa7e-50287fe8d0dd" />
 
 
 
