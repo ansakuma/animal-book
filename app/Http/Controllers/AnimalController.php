@@ -61,7 +61,7 @@ class AnimalController extends Controller
             'user_id' =>Auth::id(), // ログインauth()->id()
         ]);
 
-        return redirect('/');
+        return redirect()->route('animals.mypage')->with('success', 'アニマルを追加しました🐾');
     }
 // 💡 マイページ（自分が登録したアニマル一覧）
     public function mypage()
