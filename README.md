@@ -13,28 +13,26 @@
 
 
 ↓ログイン前のトップページ（ゲストモード）
-<img width="1457" height="983" alt="image" src="https://github.com/user-attachments/assets/3c742736-5991-43aa-ad31-505296ef06db" />
-
+<img width="1604" height="950" alt="image" src="https://github.com/user-attachments/assets/aa208821-46dc-47c9-a0d4-8a875f959dfa" />
 
 
 ↓ログイン後のトップページ（いいね機能）
-<img width="1439" height="985" alt="image" src="https://github.com/user-attachments/assets/e7a3a4d3-3dbe-4a1b-8860-b54aec8753c8" />
+<img width="1641" height="964" alt="image" src="https://github.com/user-attachments/assets/3660f7f0-c175-4fbd-b46d-3e7f27ba1dd0" />
 
 ↓詳細ページ
-<img width="966" height="691" alt="image" src="https://github.com/user-attachments/assets/f471285a-9152-4214-8154-51938eae8278" />
+<img width="1660" height="857" alt="image" src="https://github.com/user-attachments/assets/aa979a27-c668-4af0-bbc9-1022a3c3c3d1" />
+
 
 ↓マイページ（自分が登録したアニマル一覧）
-<img width="1440" height="961" alt="image" src="https://github.com/user-attachments/assets/11838cfc-3911-4c8e-9322-0ea84c901f30" />
-
+<img width="1648" height="977" alt="image" src="https://github.com/user-attachments/assets/584b20e5-fc05-4154-beab-110b9f51f36c" />
 
 
 ↓登録済みアニマルの編集ページ
-<img width="993" height="829" alt="image" src="https://github.com/user-attachments/assets/735672bc-5364-411b-a489-658c147399d1" />
-
+<img width="1649" height="964" alt="image" src="https://github.com/user-attachments/assets/dcad9b33-bc9e-4038-b9d8-1fc87415f6d8" />
 
 
 ↓新しいアニマルの登録ページ
-<img width="966" height="691" alt="image" src="https://github.com/user-attachments/assets/85723c31-80c9-4355-8092-7ece9f9e359e" />
+<img width="1654" height="926" alt="image" src="https://github.com/user-attachments/assets/c68af9f4-2bd8-497d-9d9f-238e5406d62c" />
 
 
 
