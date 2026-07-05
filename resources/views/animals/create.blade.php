@@ -5,7 +5,7 @@
     <title>アニマル登録</title>
     <style>
         body {
-            background-color: #fbf6ee; /* 優しい生成り色 */
+            background-color: #fae5e3; /* 優しい生成り色 */
             font-family: 'Zen Maru Gothic', sans-serif; /* 丸みのあるフォント */
             color: #5a4b41; /* 優しいココアブラウン */
             padding: 40px 20px;
@@ -34,17 +34,16 @@
         }
 
         button {
-            display: inline-block;
-            background-color: green;
+            background-color: rgb(129, 188, 87);
             color: white;
             padding: 8px 15px;
             border-radius: 5px;
-            text-decoration: none;
+            border: none;     /* 枠線をなしにする */
             transition: background-color 0.2s ease;
         }
 
         button:hover {
-            background-color: lightgreen;
+            background-color: green;
         }
 
         input {

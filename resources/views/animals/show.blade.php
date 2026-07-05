@@ -5,7 +5,7 @@
     <title>{{ $animal->name }}</title>
     <style>
         body {
-            background-color: #fbf6ee; /* 優しい生成り色 */
+            background-color: #fae5e3; /* 優しい生成り色 */
             font-family: 'Zen Maru Gothic', sans-serif; /* 丸みのあるフォント */
             font-size: 16px;
             color: #5a4b41; /* 優しいココアブラウン */

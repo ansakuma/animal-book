@@ -17,11 +17,16 @@
         /* 新しいアニマルを登録するボタン */
         .create-button {
             display: inline-block;
-            background-color: #c07949; /* ブラウン */
-            color: white;
+            background-color:  #fbf6b5; 
+            color:  #5a4b41;
             padding: 8px 15px;
             text-decoration: none;
             border-radius: 6px; 
+        }
+
+        .create-button:hover {
+            background-color:rgb(225, 218, 115); 
+            
         }
 
         /* テーブル（表）の基本設定 */
@@ -46,22 +51,28 @@
         .edit-button {
             display: inline-block;
             font-size: 16px;
-            background-color: green;
+            background-color:rgb(129, 188, 87);
             color: white;
             padding: 6px 12px;
             text-decoration: none;
             border-radius: 6px; 
         }
+        .edit-button:hover{
+            background-color: green;
+        }
 
         /* 削除ボタン（赤） */
         .delete-button {
-            background-color: #e3342f;
+            background-color:#ccb28b;
             font-size: 16px;
             color: white;
             padding: 6px 12px;
             border: none;
             cursor: pointer;
             border-radius: 6px; 
+        }
+        .delete-button:hover{
+            background-color:rgb(159, 126, 77);
         }
     </style>
 
@@ -78,7 +89,7 @@
    
         {{-- 新規登録ボタン --}}
         <div class="create-button-box">
-            <a href="{{ route('animals.create')}}" class="create-button">新しいアニマルを登録する⭐️</a>
+            <a href="{{ route('animals.create')}}" class="create-button">🐶新しいアニマルを登録する🐶</a>
         </div>
 
         {{-- アニマル一覧 --}}

@@ -9,7 +9,7 @@
         body {
             margin: 0;         /* 画面の端に変な隙間（余白）ができないようにリセット */
             padding: 0;        /* 内側の余白もリセット */
-            background-color: #fbf6ee; /* ページ全体の背景を優しい生成り色にする */
+            background-color: #fae5e3; /* ページ全体の背景を優しい生成り色にする */
             font-family: 'Zen Maru Gothic', "Helvetica Neue", Arial, sans-serif; /* 全ページの文字を丸みのあるフォントにする */
             color: #5a4b41;    /* 全ページの文字色を優しいココアブラウンにする */
         }
@@ -18,7 +18,7 @@
         .global-header {
             width: 100%;       /* 画面の左端から右端まで100%広げる */
             background-color: rgb(255, 255, 255); /* ヘッダーの背景は真っ白 */
-            border-bottom: 1px solid rgb(17, 52, 123); /* ヘッダーの下側に青い線を引く */
+            border-bottom: 1px solid  #5a4b41; /* ヘッダーの下側に青い線を引く */
         }
 
         /* 💡 ヘッダーの中身を綺麗に横並びにするための枠 */
@@ -47,7 +47,7 @@
             gap: 20px;         /* リンク同士の間に20ピクセルの隙間をあける */
         }
         .nav-link:hover {
-            color: orange;    /* リンクの色を青にする */
+            color:rgb(239, 122, 118);    /* リンクの色を青にする */
             text-decoration: none; /* 下線を消す */
         }
 
@@ -55,14 +55,14 @@
         .nav-link {
             font-size: 14px;
             font-weight: bold;
-            color: #2563eb;    /* リンクの色を青にする */
+            color: #efa4a2;    /* リンクの色を青にする */
             text-decoration: none; /* 下線を消す */
         }
 
         /* 💡 ユーザー名とメールアドレスの文字 */
         .user-info {
             font-size: 14px;
-            color: #4b5563;    /* 少し薄いグレーにして目立ちすぎないようにする */
+            color: #5a4b41;    /* 少し薄いグレーにして目立ちすぎないようにする */
         }
         .user-info strong {
             color: #111827;    /* でんじろう などの名前の部分だけ濃い色にする */
@@ -70,7 +70,7 @@
 
         /* 💡 赤いログアウトボタン */
         .logout-btn {
-            background-color: #ef4444; /* ボタンの背景を赤にする */
+            background-color: #efa4a2; /* ボタンの背景を赤にする */
             color: white;              /* 文字を白にする */
             font-weight: bold;         /* 文字を太字にする */
             font-size: 14px;
@@ -80,8 +80,25 @@
             cursor: pointer;           /* マウスを乗せたときに「手（人差し指）」のマークにする */
         }
         /* 💡 ログアウトボタンにマウスを乗せたときの変化 */
-        .logout-btn:hover {
-            background-color: #dc2626; /* 少し濃い赤にして、押せることを分かりやすくする */
+        .logout-btn:hover { 
+            background-color: rgb(239, 122, 118); /* 少し濃い赤にして、押せることを分かりやすくする */
+        }
+        .login-btn {
+            background-color: #efa4a2; /* ボタンの背景を赤にする */
+            color: white;              /* 文字を白にする */
+            font-weight: bold;         /* 文字を太字にする */
+            font-size: 14px;
+            padding: 8px 20px;         /* ボタンの内側に余白を作って立体感を出して太らせる（上下8px、左右20px） */
+            border: none;              /* ボタン特有の黒い外枠線を消す */
+            border-radius: 6px;        /* ボタンの角を丸くする */
+            cursor: pointer;           /* マウスを乗せたときに「手（人差し指）」のマークにする */
+            text-decoration: none;
+        }
+        .register-btn{
+            color:  #5a4b41;
+            border-radius: 10px;
+            padding: 10px 20px;
+            background-color: #fbf6b5; 
         }
     </style>
 </head>
@@ -107,8 +124,8 @@
                 @else
                     {{-- 💡 ログインしていない時は、「ゲスト」などと表示するか、ログインボタンを置く --}}
                     <span class="user-info">ゲストさん</span>
-                    <a href="{{ route('login') }}" class="nav-link">ログイン</a>
-                    <a href="{{ route('register') }}" class="nav-link">ユーザー新規登録</a> 
+                    <a href="{{ route('login') }}" class="login-btn">ログイン</a>
+                    <a href="{{ route('register') }}" class="register-btn">ユーザー新規登録</a> 
                 @endauth
                
 

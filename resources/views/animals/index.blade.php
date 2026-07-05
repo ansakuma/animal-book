@@ -29,16 +29,17 @@
 
         /* 詳細ボタン（緑） */
         .detail-button {
-            display: inline-block;
-            background-color: green;
+            background-color: rgb(129, 188, 87);
             color: white;
             padding: 8px 15px;
-            border-radius: 6px;
+            border-radius: 5px;
+            border: none;     /* 枠線をなしにする */
             text-decoration: none;
+            transition: background-color 0.2s ease;
         }
         /* 詳細ボタンにマウスを乗せたとき */
         .detail-button:hover {
-            background-color: lightgreen;
+            background-color:green;
         }
 
         /* いいねボタン */
