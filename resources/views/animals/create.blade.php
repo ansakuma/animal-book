@@ -5,7 +5,7 @@
     <title>アニマル登録</title>
     <style>
         body {
-            background-color: #fae5e3; /* 優しい生成り色 */
+            background-color: #fae5e3; 
             font-family: 'Zen Maru Gothic', sans-serif; /* 丸みのあるフォント */
             color: #5a4b41; /* 優しいココアブラウン */
             padding: 40px 20px;

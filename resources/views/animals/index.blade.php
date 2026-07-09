@@ -25,6 +25,10 @@
         /* 写真のサイズ */
         img {
             width: 200px;
+            border-radius: 16px;
+            padding: 8px;
+            background-color: #ffffff;
+            border: 4px dashed #ffb6b0; /* 点線（ダッシュ） */
         }
 
         /* 詳細ボタン（緑） */
@@ -37,6 +41,7 @@
             text-decoration: none;
             transition: background-color 0.2s ease;
         }
+
         /* 詳細ボタンにマウスを乗せたとき */
         .detail-button:hover {
             background-color:green;
@@ -52,7 +57,7 @@
         .heart-button:active {
             transform: scale(1.2); /* クリックした瞬間に少し大きく */
         }
-        /* いいねしていない時（黒いハート） */
+        /* いいねしていない時 */
         .heart-button.not-liked {
             color:rgb(127, 87, 61); /* ココアブラウン、または黒 */
         }
@@ -61,6 +66,8 @@
         .heart-button.liked {
             color: #e3342f; /* 赤色 */
         }
+
+        
     </style>
 
     <div class="index-container">
@@ -118,7 +125,7 @@
                 .then(response => response.json()) // 通信が終わったら、次にこれをやってね」という予約命令.サーバーからの返事（json）を解析
                 .then(data => {
                     if (data.status === 'liked') {
-                        // 💡 「いいね登録」されたら：黒クラスを消して、赤クラスをつける
+                        // 💡 「いいね登録」されたら：クラス消して、赤クラスをつける
                         heart.classList.remove('not-liked');
                         heart.classList.add('liked');
                     } else if (data.status === 'unliked') {

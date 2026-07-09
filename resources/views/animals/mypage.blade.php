@@ -45,6 +45,10 @@
         /* 写真のサイズ */
         img {
             width: 200px;
+            border-radius: 16px;
+            padding: 8px;
+            background-color: #ffffff;
+            border: 4px dashed #ffb6b0; /* 点線（ダッシュ） */
         }
 
         /* 編集ボタン（緑） */
@@ -61,9 +65,9 @@
             background-color: green;
         }
 
-        /* 削除ボタン（赤） */
+        /* 削除ボタン*/
         .delete-button {
-            background-color:#ccb28b;
+            background-color: #ccb28b;
             font-size: 16px;
             color: white;
             padding: 6px 12px;

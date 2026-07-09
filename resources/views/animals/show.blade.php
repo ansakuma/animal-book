@@ -5,7 +5,7 @@
     <title>{{ $animal->name }}</title>
     <style>
         body {
-            background-color: #fae5e3; /* 優しい生成り色 */
+            background-color: #fae5e3; 
             font-family: 'Zen Maru Gothic', sans-serif; /* 丸みのあるフォント */
             font-size: 16px;
             color: #5a4b41; /* 優しいココアブラウン */
@@ -31,7 +31,10 @@
 
         img {
             width: 200px;
-            border-radius: 15px;
+            border-radius: 16px;
+            padding: 8px;
+            background-color: #ffffff;
+            border: 4px dashed #ffb6b0; /* 点線（ダッシュ） */
         }
 
         .detail-button {

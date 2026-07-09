@@ -9,16 +9,17 @@
         body {
             margin: 0;         /* 画面の端に変な隙間（余白）ができないようにリセット */
             padding: 0;        /* 内側の余白もリセット */
-            background-color: #fae5e3; /* ページ全体の背景を優しい生成り色にする */
+            background-color: #fae5e3; 
             font-family: 'Zen Maru Gothic', "Helvetica Neue", Arial, sans-serif; /* 全ページの文字を丸みのあるフォントにする */
             color: #5a4b41;    /* 全ページの文字色を優しいココアブラウンにする */
         }
+
 
         /* 💡 横幅いっぱいに広がるヘッダーの帯 */
         .global-header {
             width: 100%;       /* 画面の左端から右端まで100%広げる */
             background-color: rgb(255, 255, 255); /* ヘッダーの背景は真っ白 */
-            border-bottom: 1px solid  #5a4b41; /* ヘッダーの下側に青い線を引く */
+            border-bottom: 1px solid  #5a4b41; /* ヘッダーの下側に茶色線を引く */
         }
 
         /* 💡 ヘッダーの中身を綺麗に横並びにするための枠 */
@@ -36,7 +37,7 @@
         .header-logo a {
             font-size: 22px;   /* 文字の大きさ */
             font-weight: bold; /* 文字を太字にする */
-            color: #5a4b41;    /* ロゴの文字色（濃いグレー） */
+            color: #5a4b41;    /* ロゴの文字色 */
             text-decoration: none; /* リンクの下線を消す */
         }
 
@@ -47,7 +48,7 @@
             gap: 20px;         /* リンク同士の間に20ピクセルの隙間をあける */
         }
         .nav-link:hover {
-            color:rgb(239, 122, 118);    /* リンクの色を青にする */
+            color:rgb(239, 122, 118);   
             text-decoration: none; /* 下線を消す */
         }
 
@@ -55,22 +56,22 @@
         .nav-link {
             font-size: 14px;
             font-weight: bold;
-            color: #efa4a2;    /* リンクの色を青にする */
+            color: #efa4a2;   
             text-decoration: none; /* 下線を消す */
         }
 
         /* 💡 ユーザー名とメールアドレスの文字 */
         .user-info {
             font-size: 14px;
-            color: #5a4b41;    /* 少し薄いグレーにして目立ちすぎないようにする */
+            color: #5a4b41;    
         }
         .user-info strong {
             color: #111827;    /* でんじろう などの名前の部分だけ濃い色にする */
         }
 
-        /* 💡 赤いログアウトボタン */
+        /* ログアウトボタン */
         .logout-btn {
-            background-color: #efa4a2; /* ボタンの背景を赤にする */
+            background-color: #efa4a2; /* ボタンの背景 */
             color: white;              /* 文字を白にする */
             font-weight: bold;         /* 文字を太字にする */
             font-size: 14px;
@@ -99,6 +100,7 @@
             border-radius: 10px;
             padding: 10px 20px;
             background-color: #fbf6b5; 
+            text-decoration: none;
         }
     </style>
 </head>
