@@ -66,7 +66,7 @@ class AnimalController extends Controller
 // 💡 マイページ（自分が登録したアニマル一覧）
     public function mypage()
     {
-        // 今はログインユーザーをID「1」として固定しているので、user_id が 1 のデータだけを取得
+        
         $animals = Animal::where('user_id', Auth::id())->latest()->get();
         
         return view('animals.mypage', compact('animals'));
