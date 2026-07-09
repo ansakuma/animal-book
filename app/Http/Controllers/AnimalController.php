@@ -47,13 +47,9 @@ class AnimalController extends Controller
             $imagePath = $request->file('image')->store('animals', 'public');
         }
 
-
-        
-
         Animal::create([
             'name' => $validated['name'],
-            'owner_name' => $validated['owner_name'] ?? null, // 画面からの入力を保存します
-            'image' => $imagePath,
+            'owner_name' => $validated['owner_name'] ?? null, 
             'image' => $imagePath,
             'breed' => $validated['breed'] ?? null,
             'personality' => $validated['personality'] ?? null,
@@ -67,7 +63,7 @@ class AnimalController extends Controller
     public function mypage()
     {
         
-        $animals = Animal::where('user_id', Auth::id())->latest()->get();
+        $animals = Animal::where('user_id', Auth::id())->latest()->get(); // ログインユーザーのアニマルデータを取得
         
         return view('animals.mypage', compact('animals'));
     }
