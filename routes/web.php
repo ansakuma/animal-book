@@ -35,9 +35,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/animals/{id}', [AnimalController::class, 'show'])->name('animals.show');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 
 
