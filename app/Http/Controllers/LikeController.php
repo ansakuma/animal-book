@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Animal;
 use Illuminate\Support\Facades\Auth;
 
-// app/Http/Controllers/LikeController.php
 
 class LikeController extends Controller
 {
-    public function toggleLike(Animal $animal)
+    public function toggleLike(Animal $animal)//URLに含まれている 5 という数字を見たLaravelが、自動的に「データベースの animals テーブルから、IDが 5 のアニマルデータ」を検索して、すでに中身が入った状態の $animal としてここに届けてくれふ
     {
         // ログイン中のユーザーを取得
         $user = Auth::user();

@@ -109,13 +109,13 @@
     </div>
     <script>
         // 画面の中にあるすべてのハートボタン（.heart-button）を見つけて、クリックイベントをつける
-        document.querySelectorAll('.heart-button').forEach(button => {//画面内にある、すべてのハートボタン（.heart-button というクラスがついた要素）をまとめて全部捕まえます
+        document.querySelectorAll('.heart-button').forEach(button => {//画面内にある、すべてのハートボタン（.heart-button というクラスがついた要素）をまとめて全部捕まえるて、捕まえた10個のボタンに対して、1個ずつ順番に「同じ命令」を配る
             button.addEventListener('click', function() {
-                const animalId = this.getAttribute('data-animal-id'); //HTML側に仕込んでおいた、その動物のID（例：data-animal-id="5" なら 5）を読み取ります。これで、サーバーに「5番のワンちゃんをいいねしたよ」と伝える準備ができます。
+                const animalId = this.getAttribute('data-animal-id'); //HTML側に仕込んでおいた、その動物のID（例：data-animal-id="5" なら 5）を読み取る。これで、サーバーに「5番のワンちゃんをいいねしたよ」と伝える準備をする。
                 const heart = this;//あとでハートの色を変えるときに「このボタン」を迷わず操作できるように、heart という名前の変数にキープ
 
                 // LaravelのLikeControllerに「いいねして！」と裏側でリクエストを送る
-                fetch(`/animals/${animalId}/like`, {//通信先のURLです。もしIDが 5 だったら、自動的に /animals/5/like というURLに変身します。
+                fetch(`/animals/${animalId}/like`, {//通信先のURL。もしIDが 5 だったら、自動的に /animals/5/like というURLに変身。
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',//「今から送るデータは、JSONという形式のテキストファイルだよ！」というお知らせ
@@ -125,11 +125,11 @@
                 .then(response => response.json()) // 通信が終わったら、次にこれをやってね」という予約命令.サーバーからの返事（json）を解析
                 .then(data => {
                     if (data.status === 'liked') {
-                        // 💡 「いいね登録」されたら：クラス消して、赤クラスをつける
+                        // 「いいね登録」されたら：茶ボタンのクラス消して、赤ボタンのクラスをつける
                         heart.classList.remove('not-liked');
                         heart.classList.add('liked');
                     } else if (data.status === 'unliked') {
-                        // 💡 「いいね解除」されたら：赤クラスを消して、黒クラスをつける
+                        // 「いいね解除」されたら：赤ボタンのクラスを消して、茶ボタンのクラスをつける
                         heart.classList.remove('liked');
                         heart.classList.add('not-liked');
                     }
