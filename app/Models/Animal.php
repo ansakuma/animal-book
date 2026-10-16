@@ -16,11 +16,9 @@ class Animal extends Model //Animalというデータ（animalsテーブル）�
         'user_id',
     ];
 
-   
-
-    public function likes() 
+    public function likes()
     {
-        return $this->hasMany(Like::class);//1つのアニマルに複数のいいねが紐づく
+        return $this->hasMany(Like::class); //1つのアニマルに複数のいいねが紐づく
     }
 
     // ログインユーザーがすでにいいねしているか確認する関数
@@ -31,8 +29,6 @@ class Animal extends Model //Animalというデータ（animalsテーブル）�
         }
         return $this->likes()->where('user_id', $user->id)->exists();
     }
-
-   
 
     public function toggleLike($user) // いいねを追加・削除する関数
     {
@@ -45,9 +41,9 @@ class Animal extends Model //Animalというデータ（animalsテーブル）�
         } else {
             $this->likes()->create([ // いいねを追加
                 'user_id' => $user->id,
-                'animal_id' => $this->id // アニマルのIDを保存
+                'animal_id' => $this->id, // アニマルのIDを保存
             ]);
-            return 'liked';   // コントローラーに「作ったよ」と報告
+            return 'liked'; // コントローラーに「作ったよ」と報告
         }
     }
 }

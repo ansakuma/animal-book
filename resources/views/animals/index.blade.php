@@ -1,124 +1,130 @@
 @extends('layouts.app') {{-- 共通レイアウトを合体させる --}}
 
 @section('content')
-    <style>
-        /* 全体を中央に寄せるための枠 */
-        .index-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+<style>
+    /* 全体を中央に寄せるための枠 */
+    .index-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        /* テーブル（表）の基本設定 */
-        table {
-            width: 100%;
-            border-collapse: collapse; /* 線の重複をなくす */
-        }
+    /* テーブル（表）の基本設定 */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        /* 線の重複をなくす */
+    }
 
-        /* マス目の余白と文字位置 */
-        th, td {
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ccc; /* 下線だけ引く */
-        }
+    /* マス目の余白と文字位置 */
+    th,
+    td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        /* 下線だけ引く */
+    }
 
-        /* 写真のサイズ */
-        img {
-            width: 200px;
-            border-radius: 16px;
-            padding: 8px;
-            background-color: #ffffff;
-            border: 4px dashed #ffb6b0; /* 点線（ダッシュ） */
-        }
+    /* 写真のサイズ */
+    img {
+        width: 200px;
+        border-radius: 16px;
+        padding: 8px;
+        background-color: #ffffff;
+        border: 4px dashed #ffb6b0;
+        /* 点線（ダッシュ） */
+    }
 
-        /* 詳細ボタン（緑） */
-        .detail-button {
-            background-color: rgb(129, 188, 87);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            border: none;     /* 枠線をなしにする */
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-        }
+    /* 詳細ボタン（緑） */
+    .detail-button {
+        background-color: rgb(129, 188, 87);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        border: none;
+        /* 枠線をなしにする */
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
 
-        /* 詳細ボタンにマウスを乗せたとき */
-        .detail-button:hover {
-            background-color:green;
-        }
+    /* 詳細ボタンにマウスを乗せたとき */
+    .detail-button:hover {
+        background-color: green;
+    }
 
-        /* いいねボタン */
-        .heart-button {
-            background: none;
-            border: none;
-            font-size: 25px;
-            cursor: pointer;
-        }
-        .heart-button:active {
-            transform: scale(1.2); /* クリックした瞬間に少し大きく */
-        }
-        /* いいねしていない時 */
-        .heart-button.not-liked {
-            color:rgb(127, 87, 61); /* ココアブラウン、または黒 */
-        }
+    /* いいねボタン */
+    .heart-button {
+        background: none;
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+    }
 
-        /* いいねしている時（赤いハート） */
-        .heart-button.liked {
-            color: #e3342f; /* 赤色 */
-        }
+    .heart-button:active {
+        transform: scale(1.5);
+        /* クリックした瞬間に少し大きく */
+    }
 
-        
-    </style>
+    /* いいねしていない時 */
+    .heart-button.not-liked {
+        color: rgb(127, 87, 61);
+        /* ココアブラウン、または黒 */
+    }
 
-    <div class="index-container">
-        
-        <h1 style="text-align: center;">🐱 みんなのアニマル図鑑 🐶</h1>
+    /* いいねしている時（赤いハート） */
+    .heart-button.liked {
+        color: #e3342f;
+        /* 赤色 */
+    }
+</style>
 
-        <table>
-            <tr>
-                <th>アニマル名</th>
-                <th>飼い主</th>
-                <th>写真</th>
-                <th>種類</th>
-                <th>詳細</th>
-                <th>いいね</th>
-            </tr>
+<div class="index-container">
 
-            @foreach ($animals as $animal)
-            <tr>
-                <td>{{ $animal->name }}</td>
-                <td>{{ $animal->owner_name ?? '名無しさん🐾' }}</td>
-                <td>
-                    @if($animal->image)
-                        <img src="{{ asset('storage/' . $animal->image) }}" alt="{{ $animal->name }}">
-                    @else
-                        <span style="color: #ccc; font-size: 12px;">画像なし</span>
-                    @endif
-                </td>
-                <td>{{ $animal->breed }}</td>
-                <td>
-                    <a href="{{ route('animals.show', $animal->id) }}" class="detail-button">詳細</a>
-                </td>
-                <td>
+    <table>
+        <tr>
+            <th>アニマル名</th>
+            <th>飼い主</th>
+            <th>写真</th>
+            <th>種類</th>
+            <th>詳細</th>
+            <th>いいね</th>
+        </tr>
+
+        @foreach ($animals as $animal)
+        <tr>
+            <td>{{ $animal->name }}</td>
+            <td>{{ $animal->owner_name ?? '名無しさん🐾' }}</td>
+            <td>
+                @if($animal->image)
+                <img src="{{ asset('storage/' . $animal->image) }}" alt="{{ $animal->name }}">
+                @else
+                <span style="color: #ccc; font-size: 12px;">画像なし</span>
+                @endif
+            </td>
+            <td>{{ $animal->breed }}</td>
+            <td>
+                <a href="{{ route('animals.show', $animal->id) }}" class="detail-button">詳細</a>
+            </td>
+            <td>
                 <button class="heart-button {{ $animal->isLikedBy(Auth::user()) ? 'liked' : 'not-liked' }}" data-animal-id="{{ $animal->id }}">❤</button>
-                </td>
-            </tr>
-            @endforeach
-        </table>
+            </td>
+        </tr>
+        @endforeach
+    </table>
 
-    </div>
-    <script>
-        // 画面の中にあるすべてのハートボタン（.heart-button）を見つけて、クリックイベントをつける
-        document.querySelectorAll('.heart-button').forEach(button => {//画面内にある、すべてのハートボタン（.heart-button というクラスがついた要素）をまとめて全部捕まえるて、捕まえた10個のボタンに対して、1個ずつ順番に「同じ命令」を配る
-            button.addEventListener('click', function() {
-                const animalId = this.getAttribute('data-animal-id'); //HTML側に仕込んでおいた、その動物のID（例：data-animal-id="5" なら 5）を読み取る。これで、サーバーに「5番のワンちゃんをいいねしたよ」と伝える準備をする。
-                const heart = this;//あとでハートの色を変えるときに「このボタン」を迷わず操作できるように、heart という名前の変数にキープ
+</div>
+<script>
+    // 画面の中にあるすべてのハートボタン（.heart-button）を見つけて、クリックイベントをつける
+    document.querySelectorAll('.heart-button').forEach(button => { //画面内にある、すべてのハートボタン（.heart-button というクラスがついた要素）をまとめて全部捕まえるて、捕まえた10個のボタンに対して、1個ずつ順番に「同じ命令」を配る
+        button.addEventListener('click', function() {
+            const animalId = this.getAttribute('data-animal-id'); //HTML側に仕込んでおいた、その動物のID（例：data-animal-id="5" なら 5）を読み取る。これで、サーバーに「5番のワンちゃんをいいねしたよ」と伝える準備をする。
+            const heart = this; //あとでハートの色を変えるときに「このボタン」を迷わず操作できるように、heart という名前の変数にキープ
 
-                // LaravelのLikeControllerに「いいねして！」と裏側でリクエストを送る
-                fetch(`/animals/${animalId}/like`, {//通信先のURL。もしIDが 5 だったら、自動的に /animals/5/like というURLに変身。
+            // LaravelのLikeControllerに「いいねして！」と裏側でリクエストを送る
+            fetch(`/animals/${animalId}/like`, { //通信先のURL。もしIDが 5 だったら、自動的に /animals/5/like というURLに変身。
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',//「今から送るデータは、JSONという形式のテキストファイルだよ！」というお知らせ
+                        'Content-Type': 'application/json', //「今から送るデータは、JSONという形式のテキストファイルだよ！」というお知らせ
                         'X-CSRF-TOKEN': '{{ csrf_token() }}' // Laravelで通信するときに必須の暗号キー
                     }
                 })
@@ -135,7 +141,7 @@
                     }
                 })
                 .catch(error => console.error('Error:', error)); // 万が一エラーが起きたらログに出す
-            });
         });
-    </script>
+    });
+</script>
 @endsection

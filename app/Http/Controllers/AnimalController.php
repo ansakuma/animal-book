@@ -11,11 +11,11 @@ class AnimalController extends Controller
     // 一覧ページを表示する
     public function index()
     {
-        $animals = Animal::latest()->get();
+        $animals = Animal::latest()->get(); //最新順に取得
         return view('animals.index', compact('animals'));// animals/index.blade.php にデータを渡す
     }
 
-
+    // 詳細ページを表示する
     public function show($id)
     {
     $animal = Animal::findOrFail($id);
@@ -44,10 +44,10 @@ class AnimalController extends Controller
         $imagePath = null;
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('animals', 'public');
+            $imagePath = $request->file('image')->store('animals', 'public'); //保存が成功すると、animals/ランダムな文字列.jpg のような「保存先のパス（住所）」が返ってくるので、それを変数 $imagePath に代入
         }
 
-        Animal::create([
+        Animal::create([ //animals テーブルに新しいデータを1件登録
             'name' => $validated['name'],
             'owner_name' => $validated['owner_name'] ?? null, 
             'image' => $imagePath,
@@ -71,14 +71,18 @@ class AnimalController extends Controller
     // 💡 編集画面を表示する
     public function edit($id)
     {
-        $animal = Animal::findOrFail($id);
+        $animal = Animal::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->firstOrFail(); // 他人のデータは 404   
         return view('animals.edit', compact('animal'));
     }
 
     // 💡 編集内容をデータベースに保存（更新）する
     public function update(Request $request, $id)
     {
-        $animal = Animal::findOrFail($id);
+        $animal = Animal::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->firstOrFail(); // 他人のは 404
 
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -109,8 +113,10 @@ class AnimalController extends Controller
     public function destroy($id)
     {
         // 指定されたIDのアニマルを見つける
-        $animal = Animal::findOrFail($id);
-        
+        $animal = Animal::where('id', $id)
+            ->where('user_id', Auth::id()) //user_idカラムの値が、Auth::id()（現在ログインしているユーザーのID）と一致するかどうか
+            ->firstOrFail(); // 他人のは 404
+
         // データベースから削除する
         $animal->delete();
 
