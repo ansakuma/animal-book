@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('animals', function (Blueprint $table) {
-            // 💡 好きな飼い主名（文字）を保存できる列を追加します。
-            // after('name') をつけることで、データベース上も「名前」のすぐ後ろに配置されて見やすくなります。
+            // 💡 好きな飼い主名（文字）を保存できる列を追加
+            // after('name') をつけることで、データベース上も「名前」のすぐ後ろに配置されて見やすくなる
             $table->string('owner_name')->after('name')->nullable();
         });
     }

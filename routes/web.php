@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AnimalController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LikeController;
 
 Route::get('/', [AnimalController::class, 'index'])->name('index');
 
@@ -21,9 +20,6 @@ Route::middleware('auth')->group(function () {
 
     // 削除
     Route::delete('/animals/{id}', [AnimalController::class, 'destroy'])->name('animals.destroy');
-
-    // いいね
-    Route::post('/animals/{animal}/like', [LikeController::class, 'toggleLike'])->name('animals.like');
 });
 
 Route::get('/animals/{id}', [AnimalController::class, 'show'])->name('animals.show');
